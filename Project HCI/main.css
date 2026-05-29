@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+ 
+#drawer {
+    width: 25dvw;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+ 
+#drawer button {
+    height: 50px;
+}
+ 
+.section {
+    display: none;
+    width: 75dvw;
+    padding: 20px;
+}
+ 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+th, td {
+    padding: 8px;
+    border: 1px solid black;
+    text-align: left;
+}
+ 
+.err {
+    color: red;
+}
+ 
+.ok {
+    color: green;
+}

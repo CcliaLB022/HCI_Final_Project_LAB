@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    <div id="drawer">
+    <img src="images/Left-panel (2).png" alt="Left Panel" class="sidebar-image">
+
+    <div id="tab-highlight"></div>
+
+    <button class="button_tab active-tab" onclick="show_section('register')" id="tab-register">
+    <img src="images\Icons\Register-member-icon.svg" class="tab-icon">
+    <span>Register Member</span>
+</button>
+
+<button class="button_tab" onclick="show_section('browse')" id="tab-browse">
+    <img src="images\Icons\Browse-book-icon.svg" class="tab-icon">
+    <span>Browse Book</span>
+</button>
+
+<button class="button_tab" onclick="show_section('borrow')" id="tab-borrow">
+    <img src="images\Icons\Borrow-book-icon.svg" class="tab-icon">
+    <span>Borrow Book</span>
+</button>
+
+<button class="button_tab" onclick="show_section('return')" id="tab-return">
+    <img src="images\Icons\Return-book-icon.svg" class="tab-icon">
+    <span>Return Book</span>
+</button>
+    </div>
+
+    <div id="register" class="section">
+        <h1 class="h1">Register as a Member</h1>
+        <div class="field">
+            <label>Name</label>
+            <input class="input" type="text" id="r-name" placeholder="Your full name">
+            <div class="err" id="e-name"></div>
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input class="input" type="email" id="r-email" placeholder="you@example.com">
+            <div class="err" id="e-email"></div>
+        </div>
+        <div class="field">
+            <label>Birthday</label>
+            <input class="input" type="date" id="r-bday">
+            <div class="err" id="e-bday"></div>
+        </div>
+        <div class="field">
+            <label>Library usage</label>
+            <div class="checkbox-group">
+                <label><input class="input" type="checkbox" value="Reference"> Reference</label>
+                <label><input class="input" type="checkbox" value="In-house reading"> In-house reading</label>
+                <label><input class="input" type="checkbox" value="Borrowing"> Borrowing</label>
+            </div>
+        </div>
+        <div class="tos-row">
+            <input class="input" type="checkbox" id="r-tos">
+            <label for="r-tos">I agree to the Terms of Service</label>
+        </div>
+        <div class="err" id="e-tos"></div>
+        <button class="button" onclick="register()">Register</button>
+        <div class="ok" id="r-ok"></div>
+    </div>
+
+    <div id="browse" class="section">
+        <h1 class="h1">Browse Books</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="book-rows"></tbody>
+        </table>
+    </div>
+
+    <div id="borrow" class="section">
+        <h1 class="h1">Borrow a Book</h1>
+        <div class="field">
+            <label>Member ID</label>
+            <input class="input" type="text" id="b-mid" placeholder="Your member ID">
+            <div class="err" id="e-bmid"></div>
+        </div>
+        <div class="field">
+            <label>Book ID</label>
+            <input class="input" type="text" id="b-bid" placeholder="Book ID">
+            <div class="err" id="e-bbid"></div>
+        </div>
+        <div class="field">
+            <label>Expected return date</label>
+            <input class="input" type="date" id="b-ret">
+            <div class="err" id="e-bret"></div>
+        </div>
+        <button class="button" onclick="borrowBook()">Borrow Now</button>
+        <div class="ok" id="b-ok"></div>
+    </div>
+
+    <div id="return" class="section">
+        <h1 class="h1">Return a Book</h1>
+        <div class="field">
+            <label>Book ID</label>
+            <input class="input" type="text" id="ret-bid" placeholder="Book ID">
+            <div class="err" id="e-ret"></div>
+        </div>
+        <button class="button" onclick="returnBook()">Confirm Return</button>
+        <div class="ok" id="ret-ok"></div>
+    </div>
+
+    <script src="main.js"></script>
+
+  
+
+</body>
+</html>

@@ -216,7 +216,7 @@ function borrowBook() {
     }
 
     if (book.status == 0) {
-        document.getElementById('e-bbid').innerHTML = 'This book hasnt been borrowed';
+        document.getElementById('e-bbid').innerHTML = 'This book has already been borrowed';
         return;
     }
 
